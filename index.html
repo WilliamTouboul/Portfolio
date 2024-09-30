@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="fr">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>William Touboul</title>
+
+      <link rel="stylesheet" href="assets/style/style.css" />
+      <link
+         rel="stylesheet"
+         href="https://unpkg.com/lenis@1.1.13/dist/lenis.css"
+      />
+   </head>
+   <body>
+      <div class="main">
+         <div class="nav">
+            <div class="brand"><p>William Touboul</p></div>
+
+            <ul class="nav-menu">
+               <li><a href="#">A propos</a></li>
+               <div class="point">
+                  <svg
+                     width="3"
+                     height="3"
+                     viewBox="0 0 3 3"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <circle cx="1.5" cy="1.5" r="1.5" fill="#2B2B2B" />
+                  </svg>
+               </div>
+               <li><a href="#">Services</a></li>
+               <div class="point">
+                  <svg
+                     width="3"
+                     height="3"
+                     viewBox="0 0 3 3"
+                     fill="none"
+                     xmlns="http://www.w3.org/2000/svg"
+                  >
+                     <circle cx="1.5" cy="1.5" r="1.5" fill="#2B2B2B" />
+                  </svg>
+               </div>
+               <li><a href="#">Portfolio</a></li>
+            </ul>
+
+            <div class="contact-container">
+               <a href="#">Contact</a>
+            </div>
+         </div>
+
+         <div class="hero">
+            <div class="top">
+               <h1>
+                  Changez la donne —<br />
+                  Propulsez votre marque !
+               </h1>
+               <p>
+                  Web léger, branding fort, référencement optimal. Boostez votre
+                  présence en ligne.
+               </p>
+            </div>
+
+            <div class="bottom">
+               <img src="assets/images/hero.webp" alt="" />
+            </div>
+         </div>
+
+         <div class="followup">
+            <div class="left">
+               <div class="top">
+                  <h2>Réseaux Sociaux</h2>
+                  <div class="rs-container">
+                     <div class="framed-info">Instagram</div>
+                     <div class="framed-info">LinkedIn</div>
+                     <div class="framed-info">Behance</div>
+                     <div class="framed-info">Dribbble</div>
+                  </div>
+               </div>
+               <div class="bottom">
+                  <button class="devis">Demander un devis sur mesure</button>
+               </div>
+            </div>
+
+            <div class="right">
+               <h2>Services</h2>
+               <p>
+                  Web designer et développeur aux compétences variées, je mets
+                  mes clients en priorité absolue et je m'engage à vous offrir
+                  le meilleur service possible.
+               </p>
+               <div class="skill-container">
+                  <div class="framed-info">01 - Branding</div>
+                  <div class="framed-info">02 - UI/UX Design</div>
+                  <div class="framed-info">03 - Web & app Developpement</div>
+                  <div class="framed-info">04 - Support de communication</div>
+               </div>
+               <p>
+                  Si vous avez une question, n'hesitez pas et prenez un rendez
+                  vous gratuit dés maintenant !
+               </p>
+               <div class="framed-info rdv">Prenez un RDV</div>
+            </div>
+         </div>
+
+         <!-- End Main-->
+      </div>
+      <!-- THREE JS-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+      <!-- GSAP-->
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/Flip.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
+      <!-- LENIS-->
+      <script src="https://unpkg.com/lenis@1.1.13/dist/lenis.min.js"></script>
+      <script>
+         const lenis = new Lenis();
+
+         lenis.on("scroll", (e) => {
+            console.log(e);
+         });
+
+         lenis.on("scroll", ScrollTrigger.update);
+
+         gsap.ticker.add((time) => {
+            lenis.raf(time * 1000);
+         });
+
+         gsap.ticker.lagSmoothing(0);
+      </script>
+      <!-- SELF -->
+      <script src="assets/scripts/image-effect.js"></script>
+      <script src="assets/scripts/main.js"></script>
+   </body>
+</html>

@@ -1,0 +1,242 @@
+// V 1.0 - 29/09/2024
+
+// Change log :
+// --
+
+@font-face {
+   font-family: "recoleta";
+   src: url(../fonts/recoleta/Recoleta-Regular.ttf) format("truetype");
+}
+
+@font-face {
+   font-family: "inter";
+   src: url(../fonts/inter/inter.ttf) format("truetype");
+}
+
+// Variables
+$off-white: #fffef9;
+$black: #2b2b2b;
+$highlight: #e5694b;
+
+$title-font: "Recoleta", sans-serif;
+$main-font: "inter", sans-serif;
+
+$font-size: 16px;
+$line-height: 1.5;
+
+/* -------------------------------------------------------------------------- */
+/*                                  GENERALS                                  */
+/* -------------------------------------------------------------------------- */
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+html {
+   font-size: $font-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   font-family: $title-font;
+   color: $black;
+}
+
+h1 {
+   font-size: 4rem;
+   font-weight: 400;
+}
+
+h2 {
+   font-size: 2rem;
+}
+
+h3 {
+   font-size: 1.5rem;
+}
+
+p,
+a {
+   color: $black;
+   font-size: 1rem;
+   font-family: "inter", sans-serif;
+   text-decoration: none;
+}
+
+ul {
+   list-style: none;
+}
+
+body {
+   background-color: $off-white;
+}
+
+.framed-info {
+   border: 1px $black solid;
+   font-family: "inter", serif;
+   text-transform: uppercase;
+   width: fit-content;
+   padding: 0.5rem 2rem;
+}
+
+.framed-info:hover {
+   background-color: $highlight;
+   border: $highlight solid 1px;
+   color: $off-white;
+}
+
+/* -------------------------------------------------------------------------- */
+/*                                    MAIN                                    */
+/* -------------------------------------------------------------------------- */
+.main {
+   padding-left: 2rem;
+   padding-right: 2rem;
+   padding-top: 1rem;
+}
+
+.nav {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+
+   padding-top: 1rem;
+   padding-bottom: 1rem;
+   border-top: 1px $black solid;
+   border-bottom: 1px $black solid;
+
+   & > * {
+      width: 33%;
+      display: flex;
+      align-items: center;
+   }
+
+   & > ul {
+      justify-content: center;
+      gap: 1rem;
+
+      .point {
+         display: flex;
+         align-items: center;
+         justify-content: center;
+      }
+   }
+
+   & > :last-child {
+      justify-content: end;
+   }
+
+   p,
+   a {
+      text-transform: uppercase;
+   }
+}
+
+.hero {
+   position: relative;
+
+   .top {
+      min-height: 35vh;
+      align-items: end;
+      margin-bottom: 2rem;
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+
+      h1 {
+         grid-column: 1 / span 9;
+         font-weight: 400;
+      }
+
+      p {
+         grid-column: 10 / span 12;
+         font-size: 1rem;
+         text-transform: uppercase;
+         opacity: 0.8;
+         text-align: right;
+      }
+   }
+
+   .bottom {
+      height: fit-content;
+      img {
+         width: 100%;
+         max-height: 70vh;
+         height: 100%;
+      }
+   }
+}
+
+.followup {
+   display: grid;
+   grid-template-columns: repeat(12, 1fr);
+   margin-top: 2rem;
+   margin-bottom: 2rem;
+
+   & h2 {
+      margin-bottom: 1rem;
+   }
+
+   .left {
+      grid-column: 1 / span 4;
+      border-right: 1px $black solid;
+      padding-right: 1rem;
+
+      .rs-container {
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap: 1rem;
+         width: 60%;
+
+         @media only screen and (max-width: 1700px) {
+            width: 100%;
+         }
+      }
+
+      .bottom {
+         margin-top: 2rem;
+         width: 100%;
+
+         button {
+            width: 100%;
+            font-size: 2rem;
+            font-family: $title-font;
+            text-align: center;
+            padding-left: 20%;
+            padding-right: 20%;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            background: $off-white;
+            border: 1px $black solid;
+            background-image: url(../icons/hachure.svg);
+         }
+      }
+   }
+
+   .right {
+      padding-left: 1rem;
+      grid-column: 5 / span 12;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+
+      & > .skill-container {
+         width: 60%;
+         margin-top: 2rem;
+         margin-bottom: 2rem;
+         display: flex;
+         flex-direction: row;
+         flex-wrap: wrap;
+         gap: 1rem;
+      }
+   }
+
+   .rdv {
+      margin-top: 2rem;
+   }
+}
